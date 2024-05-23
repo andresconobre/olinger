@@ -1,0 +1,35 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20' # Ou a versão do Node.js que você está usando
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run prod
+
+      - name: Deploy to Hostinger
+        uses: appleboy/scp-action@master
+        env:
+          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          HOSTINGER_SSH_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
+          HOSTINGER_SSH_USER: ${{ secrets.HOSTINGER_SSH_USER }}
+        with:
+          source: "./dist/" # Mude para a pasta onde os arquivos de produção são gerados
+          target: "/home/u498885119/domains/andresconobre.com/public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
