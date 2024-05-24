@@ -27,9 +27,9 @@ jobs:
       - name: Deploy to Hostinger
         uses: easingthemes/ssh-deploy@main
         env:
-          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
-          HOSTINGER_SSH_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
-          HOSTINGER_SSH_USER: ${{ secrets.HOSTINGER_SSH_USER }}
-          HOSTINGER_SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
-          SOURCE: "./dist/" # Mude para a pasta onde os arquivos de produção são gerados
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+          SOURCE: "dist/" # Mude para a pasta onde os arquivos de produção são gerados
           TARGET: "./public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
