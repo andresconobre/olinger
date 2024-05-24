@@ -31,5 +31,5 @@ jobs:
           HOSTINGER_SSH_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
           HOSTINGER_SSH_USER: ${{ secrets.HOSTINGER_SSH_USER }}
           HOSTINGER_SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
-          source: "./dist/" # Mude para a pasta onde os arquivos de produção são gerados
-          target: "./public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
+          SOURCE: "./dist/" # Mude para a pasta onde os arquivos de produção são gerados
+          TARGET: "./public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
