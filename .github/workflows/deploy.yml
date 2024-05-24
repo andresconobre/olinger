@@ -32,4 +32,4 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           SOURCE: "dist/" # Mude para a pasta onde os arquivos de produção são gerados
-          TARGET: "./public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
+          TARGET: "/home/u498885119/domains/andresconobre.com/public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
