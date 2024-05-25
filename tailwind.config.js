@@ -38,6 +38,12 @@ export default {
           'c11': '#63636b',
           'c12': '#1f1f24',
        }
+      },
+      backgroundImage: {
+        'olinger-footer': "url('/img/bg-olinger.svg')"
+      },
+      padding: {
+        '17.5': '4.375rem'
       }
     },
     container: {
