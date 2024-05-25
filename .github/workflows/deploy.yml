@@ -30,7 +30,18 @@ jobs:
         run: |
           echo "${SSH_PRIVATE_KEY}" > key.pem
           chmod 600 key.pem
+          # Clean any previous temporary directories
+          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp'
+          # Create a new temporary directory
           ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'mkdir -p /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp'
+          # Upload files to the temporary directory
           scp -o StrictHostKeyChecking=no -i key.pem -P ${{ secrets.REMOTE_PORT }} -r dist/* ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:/home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp/
-          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger && mv /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger'
-          rm -f key.pem
+          # Check if the upload was successful
+          UPLOAD_SUCCESS=$(ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'if [ "$(ls -A /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp)" ]; then echo 1; else echo 0; fi')
+          if [ "$UPLOAD_SUCCESS" -eq 1 ]; then
+            # Remove the old directory and move the new one
+            ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger && mv /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger'
+          else
+            echo "Upload failed, not replacing the old directory."
+          fi
+          rm -f key.pem  # Exclui o arquivo de chave privada
