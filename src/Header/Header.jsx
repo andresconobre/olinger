@@ -1,4 +1,6 @@
 import React from 'react'
+import NavItem from './NavItem'
+import Button from '../components/Button'
 
 const Header = () => {
   return (
@@ -17,8 +19,29 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <header>
-        
+      <header className='border-b border-blue-olinger-c3 py-5'>
+        <div className="container">
+          <div className="flex flex-wrap items-center justify-center md:justify-between gap-3">
+            <img src="/img/logo-olinger-blue.svg" alt="Logotipo azul da Olinger" className='w-36 h-full object-contain' />
+            <nav>
+              <ul className='flex flex-wrap items-center justify-center gap-6 py-2 px-4'>
+                <NavItem>Início</NavItem>
+                <NavItem>
+                  <span className='flex items-center gap-2'>
+                    Produtos
+                    <figure className='w-3.5 h-3.5 grid place-items-center'>
+                      <img src="/img/caret-down-icon.svg" alt="Ícone de seta para baixo" className='object-contain' />
+                    </figure>
+                  </span>
+                </NavItem>
+                <NavItem>Clientes</NavItem>
+                <NavItem>Qualidade</NavItem>
+                <NavItem>Sobre</NavItem>
+              </ul>
+            </nav>
+            <Button>Fazer orçamento</Button>
+          </div>
+        </div>
       </header>
     </>
   )
