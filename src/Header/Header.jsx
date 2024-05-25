@@ -1,6 +1,7 @@
 import React from 'react'
 import NavItem from './NavItem'
 import Button from '../components/Button'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -21,8 +22,10 @@ const Header = () => {
       </div>
       <header className='border-b border-blue-olinger-c3 py-5'>
         <div className="container">
-          <div className="flex flex-wrap items-center justify-center md:justify-between gap-3">
-            <img src="/img/logo-olinger-blue.svg" alt="Logotipo azul da Olinger" className='w-36 h-full object-contain' />
+          <div className="flex flex-wrap items-center justify-center lg:justify-between gap-3">
+            <Link to="/">
+              <img src="/img/logo-olinger-blue.svg" alt="Logotipo azul da Olinger" className='w-36 h-full object-contain' />
+            </Link>
             <nav>
               <ul className='flex flex-wrap items-center justify-center gap-6 py-2 px-4'>
                 <NavItem>Início</NavItem>
