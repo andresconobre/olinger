@@ -1,0 +1,30 @@
+[
+	{
+		"title": "Social",
+		"description": "Algodão, Poliéster, Chambray, Linho, Tricoline",
+		"img": "/img/poliester.jpg",
+		"alt": "Imagem de um tecido de poliester",
+		"link": "''"
+	},
+	{
+		"title": "Polo",
+		"description": "Algodão, Dry Fit, Poliéster, PV, Piquet.",
+		"img": "img/linho.jpeg",
+		"alt": "Imagem de um tecido de linho",
+		"link": "''"
+	},
+	{
+		"title": "Moleton",
+		"description": "Algodão, Poliéster.",
+		"img": "img/algodao.webp",
+		"alt": "Imagem de um tecido de algodão",
+		"link": "''"
+	},
+	{
+		"title": "Jaquetas",
+		"description": "Aspen, Bariloche, Lã,  Nylon, Corta vento.",
+		"img": "img/aspen.jpg",
+		"alt": "Imagem de um tecido aspen",
+		"link": "''"
+	}
+]
