@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'DM-Sans': ["DM Sans", "sans-serif"]
+      },
       colors: {
         'blue-olinger': {
           'c1': '#fdfdff',  
@@ -37,6 +40,10 @@ export default {
        }
       }
     },
+    container: {
+      center: true,
+      padding: '1rem'
+    }
   },
   plugins: [],
 }
