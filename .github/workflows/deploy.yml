@@ -33,5 +33,3 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           SOURCE: "dist/" # Mude para a pasta onde os arquivos de produção são gerados
           TARGET: "/home/u498885119/domains/andresconobre.com/public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
-        run: |
-        rsync -avz --delete -e "ssh -i ${{ secrets.SSH_PRIVATE_KEY }}" ./dist/ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:/home/u498885119/domains/andresconobre.com/public_html/olinger
