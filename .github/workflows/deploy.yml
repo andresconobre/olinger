@@ -16,13 +16,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Ou a versão do Node.js que você está usando
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build project
         run: npm run build
+
+
+      - name: Clean target directory on Hostinger
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger/*'
 
       - name: Deploy to Hostinger
         uses: easingthemes/ssh-deploy@main
@@ -31,5 +36,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-          SOURCE: "dist/" # Mude para a pasta onde os arquivos de produção são gerados
-          TARGET: "/home/u498885119/domains/andresconobre.com/public_html/olinger" # Caminho no servidor Hostinger onde os arquivos serão colocados
+          SOURCE: "dist/"
+          TARGET: "/home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger" # Caminho no servidor onde os arquivos serão colocados
