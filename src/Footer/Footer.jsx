@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -6,7 +7,9 @@ const Footer = () => {
       <div className="container flex flex-col items-center">
         <div className="flex flex-col items-center gap-8 md:gap-12">
           <div className="flex flex-col items-center gap-4">
-            <img src="/img/logo-olinger-white.svg" alt="Logotipo branco da Olinger" className='w-44 h-full object-contain' />
+            <Link to="/">
+              <img src="/img/logo-olinger-white.svg" alt="Logotipo branco da Olinger" className='w-44 h-full object-contain' />
+            </Link>
             <div className="flex items-center flex-col gap-3">
               <p className='text-sm'>Acompanhe nossas redes sociais</p>
               <div className="flex items-center gap-3">
