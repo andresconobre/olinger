@@ -24,10 +24,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-
       - name: Clean target directory on Hostinger
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger/*'
+          echo "${SSH_PRIVATE_KEY}" > key.pem
+          chmod 600 key.pem
+          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger/*'
 
       - name: Deploy to Hostinger
         uses: easingthemes/ssh-deploy@main
