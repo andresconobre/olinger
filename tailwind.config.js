@@ -38,6 +38,8 @@ export default {
           'c11': '#63636b',
           'c12': '#1f1f24',
        }
+      padding: {
+        '17.5': '4.375rem'
       }
     },
     container: {
