@@ -44,6 +44,9 @@ export default {
       },
       padding: {
         '17.5': '4.375rem'
+      },
+      width: {
+        '10.5': '2.625rem'
       }
     },
     container: {

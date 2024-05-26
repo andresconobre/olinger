@@ -2,8 +2,40 @@ import React from 'react'
 import NavItem from './NavItem'
 import Button from '../components/Button'
 import { Link } from 'react-router-dom'
+import MenuDropdown from './MenuDropdown'
 
 const Header = () => {
+  const list = [
+    {
+        "title": "Social",
+        "description": "Algodão, Poliéster, Chambray, Linho, Tricoline",
+        "img": "/img/fabric-example.png",
+        "alt": "Imagem de um tecido de poliester",
+        "link": "''"
+    },
+    {
+        "title": "Polo",
+        "description": "Algodão, Dry Fit, Poliéster, PV, Piquet.",
+        "img": "/img/fabric-example.png",
+        "alt": "Imagem de um tecido de linho",
+        "link": "''"
+    },
+    {
+        "title": "Moleton",
+        "description": "Algodão, Poliéster.",
+        "img": "/img/fabric-example.png",
+        "alt": "Imagem de um tecido de algodão",
+        "link": "''"
+    },
+    {
+        "title": "Jaquetas",
+        "description": "Aspen, Bariloche, Lã,  Nylon, Corta vento.",
+        "img": "/img/fabric-example.png",
+        "alt": "Imagem de um tecido aspen",
+        "link": "''"
+    }
+  ]
+  
   return (
     <>
       <div className='bg-blue-olinger-c2 font-DM-Sans text-black text-xs'>
@@ -29,14 +61,7 @@ const Header = () => {
             <nav>
               <ul className='flex flex-wrap items-center justify-center gap-6 py-2 px-4'>
                 <NavItem>Início</NavItem>
-                <NavItem>
-                  <span className='flex items-center gap-2'>
-                    Produtos
-                    <figure className='w-3.5 h-3.5 grid place-items-center'>
-                      <img src="/img/caret-down-icon.svg" alt="Ícone de seta para baixo" className='object-contain' />
-                    </figure>
-                  </span>
-                </NavItem>
+                <MenuDropdown list={list}>Produtos</MenuDropdown>
                 <NavItem>Clientes</NavItem>
                 <NavItem>Qualidade</NavItem>
                 <NavItem>Sobre</NavItem>
