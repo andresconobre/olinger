@@ -17,7 +17,7 @@ const MenuDropdown = ({ children, list }) => {
             </NavItem>
 
 			{isOpen && (
-                <div className="absolute max-w-72 w-full mt-2 flex flex-col rounded border border-blue-olinger-c3 bg-white p-2 shadow-sm">
+                <div className="absolute left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 max-w-72 max-h-80 overflow-y-auto w-full mt-2 flex flex-col rounded border border-blue-olinger-c3 bg-white p-2 shadow-sm">
                     {list.map((item, index) => (
                         <Link to={item.link} className="group hover:bg-blue-olinger-c2 rounded transition flex justify-between" key={index}>
                             <div className="flex justify-center flex-col gap-1 py-2 px-4">
