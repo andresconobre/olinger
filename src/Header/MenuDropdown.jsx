@@ -1,12 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import NavItem from './NavItem'
 
 const MenuDropdown = ({ children, list }) => {
 	const [isOpen, setIsOpen] = useState(false)
+    const dropdownRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
 
 	return (
-		<div>
+		<div ref={dropdownRef} >
             <NavItem onClick={() => setIsOpen((prev) => !prev)} className={isOpen ? 'font-bold bg-blue-olinger-c3' : ''}>
                 <span className='flex items-center gap-2'>
                     {children}
