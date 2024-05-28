@@ -1,12 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import NavItem from './NavItem'
 
 const MenuDropdown = ({ children, list }) => {
 	const [isOpen, setIsOpen] = useState(false)
+    const dropdownRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
 
 	return (
-		<div>
+		<div ref={dropdownRef} >
             <NavItem onClick={() => setIsOpen((prev) => !prev)} className={isOpen ? 'font-bold bg-blue-olinger-c3' : ''}>
                 <span className='flex items-center gap-2'>
                     {children}
@@ -17,7 +36,7 @@ const MenuDropdown = ({ children, list }) => {
             </NavItem>
 
 			{isOpen && (
-                <div className="absolute max-w-72 w-full mt-2 flex flex-col rounded border border-blue-olinger-c3 bg-white p-2 shadow-sm">
+                <div className="absolute left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 max-w-72 max-h-80 overflow-y-auto w-full mt-2 flex flex-col rounded border border-blue-olinger-c3 bg-white p-2 shadow-sm">
                     {list.map((item, index) => (
                         <Link to={item.link} className="group hover:bg-blue-olinger-c2 rounded transition flex justify-between" key={index}>
                             <div className="flex justify-center flex-col gap-1 py-2 px-4">

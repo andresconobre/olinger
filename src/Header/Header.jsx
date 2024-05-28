@@ -11,28 +11,28 @@ const Header = () => {
         "description": "Algodão, Poliéster, Chambray, Linho, Tricoline",
         "img": "/img/fabric-example.png",
         "alt": "Imagem de um tecido de poliester",
-        "link": "''"
+        "link": ""
     },
     {
         "title": "Polo",
         "description": "Algodão, Dry Fit, Poliéster, PV, Piquet.",
         "img": "/img/fabric-example.png",
         "alt": "Imagem de um tecido de linho",
-        "link": "''"
+        "link": ""
     },
     {
         "title": "Moleton",
         "description": "Algodão, Poliéster.",
         "img": "/img/fabric-example.png",
         "alt": "Imagem de um tecido de algodão",
-        "link": "''"
+        "link": ""
     },
     {
         "title": "Jaquetas",
         "description": "Aspen, Bariloche, Lã,  Nylon, Corta vento.",
         "img": "/img/fabric-example.png",
         "alt": "Imagem de um tecido aspen",
-        "link": "''"
+        "link": ""
     }
   ]
   
