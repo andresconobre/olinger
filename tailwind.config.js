@@ -40,13 +40,17 @@ export default {
        }
       },
       backgroundImage: {
-        'olinger-footer': "url('/img/bg-olinger.svg')"
+        'olinger-footer': "url('/img/bg-olinger.svg')",
+        'olinger-2': "url('/img/bg-olinger-2.svg')"
       },
       padding: {
         '17.5': '4.375rem'
       },
       width: {
         '10.5': '2.625rem'
+      },
+      boxShadow: {
+    'card': '0px 4px 4px rgba(149, 161, 238, 0.08)'
       }
     },
     container: {
