@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../components/Button";
-import Products from "./Products";
+import ProductsHome from "./ProductsHome";
+import Companies from "./Companies";
+import Qualities from "./Qualities/Qualities";
 
 const Home = () => {
   return (
@@ -27,21 +29,21 @@ const Home = () => {
           <div className="lg:col-span-7 flex group gap-4 h-52 md:h-[420px]">
             <div className="transition-[flex] ease-in-out duration-700 group-hover:[&:not(:hover)]:flex-1 hover:flex-[3] flex-[4]">
               <img
-                src="/img/home-img-1.png"
+                src="/img/home-img-1.jpeg"
                 alt="Exemplo"
                 className="w-full h-full object-cover rounded-lg transition duration-500 ease-in"
               />
             </div>
             <div className="transition-[flex] ease-in-out duration-700 group-hover:[&:not(:hover)]:flex-1 hover:flex-[3] flex-[2]">
               <img
-                src="/img/home-img-1.png"
+                src="/img/home-img-2.jpeg"
                 alt="Exemplo"
                 className="w-full h-full object-cover rounded-lg transition duration-500 ease-in"
               />
             </div>
             <div className="transition-[flex] ease-in-out duration-700 group-hover:[&:not(:hover)]:flex-1 hover:flex-[3] flex-1">
               <img
-                src="/img/home-img-1.png"
+                src="/img/home-img-3.jpeg"
                 alt="Exemplo"
                 className="w-full h-full object-cover rounded-lg transition duration-500 ease-in"
               />
@@ -50,7 +52,9 @@ const Home = () => {
         </div>
       </section>
 
-      <Products/>
+      <Companies/>
+      <ProductsHome/>
+      <Qualities/>
     </>
   );
 };

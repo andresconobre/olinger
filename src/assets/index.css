@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.companiesSwiper {
+  @apply w-full h-full;
+}
+
+.companiesSwiper > .swiper-wrapper {
+  @apply !ease-linear;
+}
+
+.swiperThumb {
+  height: 17%;
+  box-sizing: border-box;
+  padding: 10px 0 !important;
+}
+
+.swiperThumb .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.swiperThumb .swiper-slide-thumb-active {
+  opacity: 1;
+}
