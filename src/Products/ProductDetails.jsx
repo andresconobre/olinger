@@ -41,7 +41,7 @@ const ProductDetails = () => {
             className="mySwiper2"
           >
             {Array.from({ length: productDetails.total }).map((_, index) => (
-              <SwiperSlide key={index} className="max-h-[800px] ">
+              <SwiperSlide key={index} className="max-h-[600px] ">
                 <img
                   src={`/img/${productDetails.link}/img-${index + 1}.png`}
                   className="object-cover aspect-[9/16]"
@@ -59,7 +59,7 @@ const ProductDetails = () => {
             className="swiperThumb"
           >
             {Array.from({ length: productDetails.total }).map((_, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="max-h-[100px]">
                 <img src={`/img/${productDetails.link}/img-${index + 1}.png`} className="w-full h-full object-cover" />
               </SwiperSlide>
             ))}
