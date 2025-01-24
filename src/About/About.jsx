@@ -60,7 +60,7 @@ const About = () => {
                 (42) 3239-6250
               </a>
               <a
-                href={`https://wa.me/4291521045?text=${encodeURIComponent(
+                href={`https://wa.me/5542991521045?text=${encodeURIComponent(
                   `Olá, vim do site da Olinger e tenho interesse em fazer um orçamento.`
                 )}`}
                 target="_blank"
@@ -75,7 +75,7 @@ const About = () => {
                 (42) 99152-1045
               </a>
               <a
-                href={`https://wa.me/4299715736?text=${encodeURIComponent(
+                href={`https://wa.me/5542999715736?text=${encodeURIComponent(
                   `Olá, vim do site da Olinger e tenho interesse em fazer um orçamento.`
                 )}`}
                 target="_blank"
