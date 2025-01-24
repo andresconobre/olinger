@@ -39,9 +39,12 @@ jobs:
           # Check if the upload was successful
           UPLOAD_SUCCESS=$(ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'if [ "$(ls -A /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp)" ]; then echo 1; else echo 0; fi')
           if [ "$UPLOAD_SUCCESS" -eq 1 ]; then
-            # Remove the old directory and move the new one
-            ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger && mv /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger'
+            # Move files without overwriting .htaccess
+            ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rsync -a --exclude=".htaccess" /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp/ /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger/'
+            # Clean up the temporary directory after moving
+            ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -p ${{ secrets.REMOTE_PORT }} 'rm -rf /home/${{ secrets.REMOTE_USER }}/domains/andresconobre.com/public_html/olinger_temp'
           else
             echo "Upload failed, not replacing the old directory."
           fi
           rm -f key.pem  # Exclui o arquivo de chave privada
+
