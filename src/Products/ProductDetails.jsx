@@ -15,6 +15,16 @@ const ProductDetails = () => {
   const { productsData } = useContext(Context);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const productDetails = productsData.find((item) => item.link === product);
+  const [selectedColors, setSelectedColors] = useState([]);
+
+  const toggleColorSelection = (colorName) => {
+    setSelectedColors(
+      (prev) =>
+        prev.includes(colorName)
+          ? prev.filter((name) => name !== colorName) // Remove se já está selecionada
+          : [...prev, colorName] // Adiciona se não está selecionada
+    );
+  };
 
   if (!productDetails) {
     return <div>Produto não encontrado.</div>;
@@ -36,12 +46,15 @@ const ProductDetails = () => {
             }}
             spaceBetween={10}
             navigation={true}
-            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+            thumbs={{
+              swiper:
+                thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+            }}
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper2"
           >
             {Array.from({ length: productDetails.total }).map((_, index) => (
-              <SwiperSlide key={index} className="max-h-[800px] ">
+              <SwiperSlide key={index} className="max-h-[600px] ">
                 <img
                   src={`/img/${productDetails.link}/img-${index + 1}.png`}
                   className="object-cover aspect-[9/16]"
@@ -59,13 +72,16 @@ const ProductDetails = () => {
             className="swiperThumb"
           >
             {Array.from({ length: productDetails.total }).map((_, index) => (
-              <SwiperSlide key={index}>
-                <img src={`/img/${productDetails.link}/img-${index + 1}.png`} className="w-full h-full object-cover" />
+              <SwiperSlide key={index} className="max-h-[100px]">
+                <img
+                  src={`/img/${productDetails.link}/img-${index + 1}.png`}
+                  className="w-full h-full object-cover"
+                />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        <div className="col-span-12 lg:col-span-5 lg:col-start-8 order-1 lg:order-2 flex flex-col items-start gap-14">
+        <div className="col-span-12 lg:col-span-5 lg:col-start-8 order-1 lg:order-2 flex flex-col items-start gap-10">
           <div className="flex flex-col gap-4">
             <h2 className="font-bold text-blue-olinger-c12 text-[40px]">
               {productDetails.name}
@@ -75,6 +91,36 @@ const ProductDetails = () => {
               <p className="text-gray-olinger-c11 whitespace-pre-wrap empty:hidden">
                 {productDetails.description}
               </p>
+            </div>
+            <div className="flex flex-col">
+              <p className="font-semibold text-blue-olinger-c12">Cores:</p>
+              <p className="text-blue-olinger-c12 text-sm mb-2">Clique para selecionar</p>
+              <div className="flex items-center gap-3 flex-wrap">
+                {productDetails.colors.map((color, idx) => (
+                  <div
+                    className={`size-8 bg-cover bg-no-repeat cursor-pointer ${
+                      selectedColors.includes(color.name)
+                        ? "border-4 border-blue-olinger-c12"
+                        : ""
+                    }`}
+                    style={
+                      color?.hex
+                        ? { backgroundColor: color?.hex }
+                        : {
+                            backgroundImage: `url('/img/${productDetails.link}/cores/${color?.image}.png')`,
+                          }
+                    }
+                    onClick={() => toggleColorSelection(color.name)}
+                    key={idx}
+                  />
+                ))}
+              </div>
+              {selectedColors?.length > 0 && (
+                <div className="mt-4">
+                  <strong>Cores selecionadas:</strong>{" "}
+                  {selectedColors.join(", ")}
+                </div>
+              )}
             </div>
           </div>
           <Button arrow>Adicionar ao orçamento</Button>

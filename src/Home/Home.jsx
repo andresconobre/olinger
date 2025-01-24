@@ -52,7 +52,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Companies/>
+      {/* <Companies/> */}
       <ProductsHome/>
       <Qualities/>
     </>
