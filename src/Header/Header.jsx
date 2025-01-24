@@ -34,9 +34,10 @@ const Header = () => {
               <nav>
                 <ul className='flex flex-wrap items-center justify-center gap-6 py-2 px-4'>
                   <NavItem to="/">Início</NavItem>
-                  <MenuDropdown data={productsData}>Produtos</MenuDropdown>
-                  <NavItem>Clientes</NavItem>
-                  <NavItem>Qualidade</NavItem>
+                  <NavItem to="/produtos">Produtos</NavItem>
+                  {/* <MenuDropdown data={productsData}>Produtos</MenuDropdown> */}
+                  {/* <NavItem>Clientes</NavItem> */}
+                  {/* <NavItem>Qualidade</NavItem> */}
                   <NavItem to='/sobre'>Sobre</NavItem>
                 </ul>
               </nav>
