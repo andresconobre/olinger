@@ -59,17 +59,48 @@ const About = () => {
                 />
                 (42) 3239-6250
               </a>
-              <a href="tel:4232396250" className="flex items-center gap-1">
+              <a
+                href={`https://wa.me/42991521045?text=${encodeURIComponent(
+                  `Olá, vim do site da Olinger e tenho interesse em fazer um orçamento.`
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1"
+              >
                 <img
-                  src="/img/phone-icon.svg"
+                  src="/img/whatsapp-icon.svg"
                   alt="Ícone de telefone"
                   className="w-3 h-3 object-contain"
                 />
-                (42) 3239-6250
+                (42) 99152-1045
+              </a>
+              <a
+                href={`https://wa.me/42999715736?text=${encodeURIComponent(
+                  `Olá, vim do site da Olinger e tenho interesse em fazer um orçamento.`
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1"
+              >
+                <img
+                  src="/img/whatsapp-icon.svg"
+                  alt="Ícone de telefone"
+                  className="w-3 h-3 object-contain"
+                />
+                (42) 99971-5736
               </a>
             </div>
           </div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14455.855242030286!2d-50.1818618!3d-25.0692157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e81a6a9825f9b5%3A0xf24d4acd0316fe88!2sMalharia%20Olinger!5e0!3m2!1spt-BR!2sbr!4v1719832757279!5m2!1spt-BR!2sbr" width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-lg w-full lg:w-[600px]"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14455.855242030286!2d-50.1818618!3d-25.0692157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e81a6a9825f9b5%3A0xf24d4acd0316fe88!2sMalharia%20Olinger!5e0!3m2!1spt-BR!2sbr!4v1719832757279!5m2!1spt-BR!2sbr"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="rounded-lg w-full lg:w-[600px]"
+          ></iframe>
         </div>
       </div>
     </section>
