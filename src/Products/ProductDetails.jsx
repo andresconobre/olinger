@@ -12,7 +12,7 @@ import Button from "../components/Button";
 
 const ProductDetails = () => {
   const { product } = useParams();
-  const { productsData } = useContext(Context);
+  const { productsData, redirectToWhatsApp } = useContext(Context);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const productDetails = productsData.find((item) => item.link === product);
   const [selectedColors, setSelectedColors] = useState([]);
@@ -58,6 +58,7 @@ const ProductDetails = () => {
                 <img
                   src={`/img/${productDetails.link}/img-${index + 1}.png`}
                   className="object-cover"
+                  loading="lazy"
                 />
               </SwiperSlide>
             ))}
@@ -76,6 +77,7 @@ const ProductDetails = () => {
                 <img
                   src={`/img/${productDetails.link}/img-${index + 1}.png`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </SwiperSlide>
             ))}
@@ -92,6 +94,7 @@ const ProductDetails = () => {
                 {productDetails.description}
               </p>
             </div>
+            {productDetails?.colors?.length > 0 && (
             <div className="flex flex-col">
               <p className="font-semibold text-blue-olinger-c12">Cores:</p>
               <p className="text-blue-olinger-c12 text-sm mb-2">Clique para selecionar</p>
@@ -122,8 +125,9 @@ const ProductDetails = () => {
                 </div>
               )}
             </div>
+              )}
           </div>
-          <Button arrow>Adicionar ao orçamento</Button>
+          <Button asButton arrow onClick={() => redirectToWhatsApp(productDetails.name, selectedColors)}>Fazer orçamento</Button>
         </div>
       </div>
       <Qualities />

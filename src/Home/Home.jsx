@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "../components/Button";
 import ProductsHome from "./ProductsHome";
 import Companies from "./Companies";
 import Qualities from "./Qualities/Qualities";
+import Context from "../Context";
 
 const Home = () => {
+  const { redirectToWhatsApp } = useContext(Context);
+
   return (
     <>
       <section className="container py-12 font-DM-Sans">
@@ -24,7 +27,7 @@ const Home = () => {
                 tangível da sua marca, cultura e profissionalismo.
               </p>
             </div>
-            <Button arrow>Fazer orçamento</Button>
+            <Button asButton arrow onClick={() => redirectToWhatsApp()}>Fazer orçamento</Button>
           </div>
           <div className="lg:col-span-7 flex group gap-4 h-52 md:h-[420px]">
             <div className="transition-[flex] ease-in-out duration-700 group-hover:[&:not(:hover)]:flex-1 hover:flex-[3] flex-[4]">
