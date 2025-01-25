@@ -6,14 +6,14 @@ import MenuDropdown from "./MenuDropdown";
 import Context from "../Context";
 
 const Header = () => {
-  const { productsData } = useContext(Context);
+  const { productsData, redirectToWhatsApp } = useContext(Context);
 
   return (
     <>
       <header>
         <div className="bg-blue-olinger-c2 font-DM-Sans text-black text-xs">
           <div className="container py-4">
-            <div className="flex flex-wrap items-center justify-center sm:justify-between gap-2">
+            <div className="flex flex-wrap items-center justify-center md:justify-between gap-2">
               <div className="flex items-center gap-1">
                 <img
                   src="/img/pin-icon.svg"
@@ -28,7 +28,7 @@ const Header = () => {
                   Avenida Senador Flávio Carvalho Guimarães, 1600
                 </a>
               </div>
-              <div className="flex items-center divide-x divide-blue-olinger-c5 *:px-4 first:*:pl-0 last:*:pr-0">
+              <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-0 items-center justify-center md:divide-x md:divide-blue-olinger-c5 md:*:px-4 md:first:*:pl-0 md:last:*:pr-0">
                 <a href="tel:4232396250" className="flex items-center gap-1">
                   <img
                     src="/img/phone-icon.svg"
@@ -91,7 +91,7 @@ const Header = () => {
                   <NavItem to="/sobre">Sobre</NavItem>
                 </ul>
               </nav>
-              <Button>Fazer orçamento</Button>
+              <Button asButton onClick={() => redirectToWhatsApp()}>Fazer orçamento</Button>
             </div>
           </div>
         </div>
