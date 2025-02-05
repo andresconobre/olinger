@@ -4,14 +4,14 @@ import Qualities from "../Home/Qualities/Qualities";
 const About = () => {
   const [aboutData, setAboutData] = useState({
     text1:
-      "A Malharia Olinger é uma empresa familiar sinônimo de tradição e qualidade, especializada na fabricação de uniformes profissionais com sede em Ponta Grossa-PR. Fundada em 1991 pelo Sr. Rui Olinger, um grande visionário com o propósito de oferecer uniformes que aliam conforto, qualidade e beleza acima de tudo, tornando-se pioneira do setor de confecção dos Campos Gerais. \n\nCom mais de 30 anos de atuação, a empresa conquistou destaque no mercado nacional, atendendo clientes em todo o Brasil com soluções personalizadas para diferentes setores, como indústrias, comércio, saúde, educação e serviços. \n\nA fábrica utiliza tecnologia de ponta e materiais de alta qualidade para garantir peças resistentes e confortáveis. Um dos grandes diferenciais é a personalização dos uniformes, com serviços de bordado, serigrafia e modelagens especificas que refletem a identidade visual de cada cliente. \n\nÉ uma empresa reconhecida por sua excelência e compromisso com a qualidade. Possui certificado pela Cedro, uma das maiores fábricas de tecido do país, um selo que atesta o alto padrão dos produtos. Além disso, é homologado pelo Grupo Stellantis, um dos maiores conglomerados automotivos do mundo.",
+      "A Malharia Olinger é uma empresa familiar sinônimo de tradição e qualidade, especializada na fabricação de uniformes profissionais com sede em Ponta Grossa-PR. Fundada em 1991 pela Sra. Rosmeri Olinger e pelo Sr. Rui Olinger, grandes visionários com o propósito de oferecer uniformes que aliam conforto, qualidade e beleza acima de tudo, tornando-se pioneira do setor de confecção dos Campos Gerais. \n\nCom mais de 30 anos de atuação, a empresa conquistou destaque no mercado nacional, atendendo clientes em todo o Brasil com soluções personalizadas para diferentes setores, como indústrias, comércio, saúde, educação e serviços. \n\nA fábrica utiliza tecnologia de ponta e materiais de alta qualidade para garantir peças resistentes e confortáveis. Um dos grandes diferenciais é a personalização dos uniformes, com serviços de bordado, serigrafia e modelagens especificas que refletem a identidade visual de cada cliente. \n\nÉ uma empresa reconhecida por sua excelência e compromisso com a qualidade. Possui certificado pela Cedro, uma das maiores fábricas de tecido do país, um selo que atesta o alto padrão dos produtos. Além disso, é homologado pelo Grupo Stellantis, um dos maiores conglomerados automotivos do mundo.",
     text2:
       "Com uma equipe qualificada, a empresa está em constante evolução, acompanhando tendências do mercado e investindo em melhorias contínuas para oferecer produtos modernos e diferenciados. Mais do que uniformes, a Malharia entrega peças que representam profissionalismo, organização e identidade corporativa, além disso, detém todo o processo de fabricação dentro da própria empresa, mantendo total controle da qualidade e agilidade da entrega. \n\nSeja qual for a necessidade, a Malharia Olinger é sinônimo de capacidade, confiança e inovação, reafirmando sua posição como uma das principais fornecedoras de uniformes profissionais no Brasil.",
   });
   return (
     <section className="font-DM-Sans pt-12">
       <div className="container">
-        <img src="" alt="" className="rounded-lg w-full max-h-[450px] h-full" />
+        <img src="/img/about/img-1.jpg" alt="Imagem do portão de entrada da Olinger" className="rounded-lg w-full max-h-[450px] h-full object-cover" />
         <h2 className="font-bold text-blue-olinger-c12 text-[40px] py-4">
           Malharia Olinger
         </h2>
@@ -23,9 +23,9 @@ const About = () => {
           <div className="col-span-2 lg:col-span-1 flex flex-col gap-4">
             <p className="whitespace-pre-wrap">{aboutData.text2}</p>
             <img
-              src=""
-              alt=""
-              className="rounded-lg w-full max-h-[450px] h-full"
+              src="/img/about/img-2.jpg"
+              alt="Imagem da porta de entrada da Olinger"
+              className="rounded-lg w-full max-h-[450px] h-full object-cover"
             />
           </div>
         </div>
