@@ -110,7 +110,7 @@ const ProductDetails = () => {
                       color?.hex
                         ? { backgroundColor: color?.hex }
                         : {
-                            backgroundImage: `url('/img/${productDetails.link}/cores/${color?.image}.png')`,
+                            backgroundImage: `url('/img/cores/${color?.image}.png')`,
                           }
                     }
                     onClick={() => toggleColorSelection(color.name)}

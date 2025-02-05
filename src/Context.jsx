@@ -10,7 +10,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "social",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "Eleve a imagem da sua equipe com nossas camisas sociais para uniformes corporativos, que combinam sofisticação, conforto e funcionalidade. Confeccionadas com tecidos premium e proteção UV, nossas camisas oferecem um ajuste impecável para transmitir profissionalismo e elegância no ambiente de trabalho. Escolha qualidade, e praticidade para o dia a dia corporativo!",
       total: 28,
       colors: [],
     },
@@ -23,6 +23,15 @@ export const Provider = ({ children }) => {
         "A camisa polo é uma das opções mais populares para uniformes corporativos devido ao seu design profissional e confortável. Elas oferecem um equilíbrio entre elegância e casualidade, tornando-as ideais para diversas áreas de trabalho. \nA malha piquet é uma das escolhas mais tradicionais para camisas polo, podendo ser confeccionado também em malha de poliviscose, oferecendo um tecido macio e prático. \nInovando no mercado temos o tecido Piquet Light garantindo conforto, qualidade e durabilidade. \nPersonalização com bordado e serigrafia.",
       total: 35,
       colors: [
+        { name: "Cinza Mesclado", hex: null, image: "cinza-mesclado" },
+        { name: "Royal Mescla", hex: null, image: "royal-mescla" },
+        { name: "Caqui Mescla", hex: null, image: "caqui-mescla" },
+        { name: "Vermelho Mescla", hex: null, image: "vermelho-mescla" },
+        { name: "Preto Mescla", hex: null, image: "preto-mescla" },
+        { name: "Marinho Mescla", hex: null, image: "marinho-mescla" },
+        { name: "Atlântico Mescla", hex: null, image: "atlantico-mescla" },
+        { name: "Bordeaux Mescla", hex: null, image: "bordeaux-mescla" },
+        { name: "PA Branca", hex: null, image: "pa-branca" },
         { name: "Amarelo Banco do Brasil", hex: "#ffcf0f", image: null },
         { name: "Laranja Escuro", hex: "#b51f27", image: null },
         { name: "Vermelho", hex: "#b51f27", image: null },
@@ -51,7 +60,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "moletons",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "O moletom é a escolha perfeita para unir conforto e informalidade com a identidade corporativa. Confeccionado com tecidos macios de poliéster e polialgodão, que oferece aconchego e ótima durabilidade. Atende tanto equipes corporativas quanto escolares.",
       total: 6,
       colors: [],
     },
@@ -61,7 +70,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "jaquetas",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "A jaqueta combina funcionalidade, conforto e estilo, ideal para representar a identidade da sua equipe com profissionalismo. Fabricada com materiais de alta qualidade, com tecido 100% poliéster repelente a água, ela oferece excelente durabilidade, com proteção UV mesmo em uso diário e intenso.",
       total: 9,
       colors: [],
     },
@@ -71,7 +80,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "camisetas",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "As camisetas oferecem uma combinação perfeita entre conforto, durabilidade e profissionalismo. Fabricadas com tecidos de alta qualidade, como poliviscose, algodão e polialgodão, que garantem resistência, maciez e respirabilidade, mesmo em jornadas longas. \n\nSeja para uniformizar sua equipe ou marcar presença em um evento, nossas camisetas são a escolha certa. Deixe sua marca com estilo e conforto!",
       total: 0,
       colors: [
         { name: "Cinza Mesclado", hex: null, image: "cinza-mesclado" },
