@@ -10,7 +10,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "social",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "Eleve a imagem da sua equipe com nossas camisas sociais para uniformes corporativos, que combinam sofisticação, conforto e funcionalidade. Confeccionadas com tecidos premium e proteção UV, nossas camisas oferecem um ajuste impecável para transmitir profissionalismo e elegância no ambiente de trabalho. Escolha qualidade, e praticidade para o dia a dia corporativo!",
       total: 28,
       colors: [],
     },
@@ -60,7 +60,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "moletons",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "O moletom é a escolha perfeita para unir conforto e informalidade com a identidade corporativa. Confeccionado com tecidos macios de poliéster e polialgodão, que oferece aconchego e ótima durabilidade. Atende tanto equipes corporativas quanto escolares.",
       total: 6,
       colors: [],
     },
@@ -70,7 +70,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "jaquetas",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "A jaqueta combina funcionalidade, conforto e estilo, ideal para representar a identidade da sua equipe com profissionalismo. Fabricada com materiais de alta qualidade, com tecido 100% poliéster repelente a água, ela oferece excelente durabilidade, com proteção UV mesmo em uso diário e intenso.",
       total: 9,
       colors: [],
     },
@@ -80,7 +80,7 @@ export const Provider = ({ children }) => {
       cardDetails: "Algodão, Poliéster, Chambray, Linho, Tricoline.",
       link: "camisetas",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae consequuntur veniam a officia asperiores dolorem aliquid eveniet molestiae sit, facere, nemo rerum ab tempore recusandae fuga iusto ipsum nobis ut? Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, eos quia dolores magni optio repudiandae obcaecati maxime aut minima doloribus! Ipsum sequi fuga quaerat, facilis sapiente labore. Id, dolorum reprehenderit.",
+        "As camisetas oferecem uma combinação perfeita entre conforto, durabilidade e profissionalismo. Fabricadas com tecidos de alta qualidade, como poliviscose, algodão e polialgodão, que garantem resistência, maciez e respirabilidade, mesmo em jornadas longas. \n\nSeja para uniformizar sua equipe ou marcar presença em um evento, nossas camisetas são a escolha certa. Deixe sua marca com estilo e conforto!",
       total: 0,
       colors: [
         { name: "Cinza Mesclado", hex: null, image: "cinza-mesclado" },
