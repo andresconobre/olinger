@@ -4,6 +4,7 @@ import ProductsHome from "./ProductsHome";
 import Companies from "./Companies";
 import Qualities from "./Qualities/Qualities";
 import Context from "../Context";
+import InstagramPosts from "../InstagramPosts/InstagramPosts";
 
 const Home = () => {
   const { redirectToWhatsApp } = useContext(Context);
@@ -27,7 +28,9 @@ const Home = () => {
                 tangível da sua marca, cultura e profissionalismo.
               </p>
             </div>
-            <Button asButton arrow onClick={() => redirectToWhatsApp()}>Fazer orçamento</Button>
+            <Button asButton arrow onClick={() => redirectToWhatsApp()}>
+              Fazer orçamento
+            </Button>
           </div>
           <div className="lg:col-span-7 flex group gap-4 h-52 md:h-[420px]">
             <div className="transition-[flex] ease-in-out duration-700 group-hover:[&:not(:hover)]:flex-1 hover:flex-[3] flex-[4]">
@@ -54,10 +57,10 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* <Companies/> */}
-      <ProductsHome/>
-      <Qualities/>
+      <ProductsHome />
+      <InstagramPosts />
+      <Qualities />
     </>
   );
 };
