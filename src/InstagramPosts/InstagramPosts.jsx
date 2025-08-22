@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { InstagramEmbed } from "react-social-media-embed";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
 
 const posts = [
   "https://www.instagram.com/reel/DNn_EGvRtOU",
@@ -14,6 +16,8 @@ const posts = [
 
 const InstagramPosts = () => {
   const swiperRef = useRef(null);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
   return (
     <section className="py-12 md:py-24 font-DM-Sans">
       <div className="container">
@@ -29,13 +33,17 @@ const InstagramPosts = () => {
             <img
               src="/img/arrow-right-blue-icon.svg"
               alt="Ícone de seta para direita"
-              className="w-4 min-[768px]:w-6 xl:w-8 h-4 min-[768px]:h-6 xl:h-8 object-contain rotate-180"
+              className="hidden min-[768px]:block w-6 xl:w-8 h-6 xl:h-8 object-contain rotate-180"
             />
           </button>
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
+            modules={[Autoplay]}
+            autoplay={
+              isMobile ? { delay: 3000, disableOnInteraction: false } : false
+            }
             breakpoints={{
               1: {
                 slidesPerView: 1,
@@ -66,7 +74,7 @@ const InstagramPosts = () => {
             <img
               src="/img/arrow-right-blue-icon.svg"
               alt="Ícone de seta para direita"
-              className="w-4 min-[768px]:w-6 xl:w-8 h-4 min-[768px]:h-6 xl:h-8 object-contain"
+              className="hidden min-[768px]:block w-6 xl:w-8 h-6 xl:h-8 object-contain"
             />
           </button>
         </div>
